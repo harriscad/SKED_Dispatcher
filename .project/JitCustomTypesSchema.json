@@ -1,0 +1,806 @@
+{
+  "exportedBy": null,
+  "bundleHash": null,
+  "version": "1.0.0.0",
+  "jitAssemblyCompilerCommands": [
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "ZlDnJLhPXh4MV7c8Xavtk97dHw0xs20TPkAGtjSzWU0=",
+        "bundleName": "Agent_Input",
+        "entitiesBundle": {
+          "Types": {
+            "Agent_Input": {
+              "name": "Agent_Input",
+              "properties": [
+                {
+                  "name": "email_body",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_body\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_body\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "email_subject",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_subject\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_subject\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "values": [],
+              "baseType": null
+            }
+          },
+          "Metadata": {},
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.System.Activities.ViewModels.SWEntities.Agent_Input",
+        "hash": "WmxEbkpMaFBYaDRNVjdjOFhhdnRrOTdkSHcweHMyMFRQa0FHdGpTeldVMD0",
+        "assemblyName": "Agent_Input.3C7FMgT73N1kWl2s2fjQna"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "ag4RwGHSIxiKJsOtJ5TAP8BB/EGL4RGDbywxk9tFOWw=",
+        "bundleName": "Agent_Output",
+        "entitiesBundle": {
+          "Types": {
+            "Agent_Output": {
+              "name": "Agent_Output",
+              "properties": [
+                {
+                  "name": "category",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"category\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"category\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "confidence",
+                  "type": {
+                    "ClrType": "System.Double, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"confidence\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"confidence\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "is_auto_generated",
+                  "type": {
+                    "ClrType": "System.Boolean, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"is_auto_generated\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"is_auto_generated\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "rbae_number",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"rbae_number\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"rbae_number\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "reason",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"reason\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"reason\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "values": [],
+              "baseType": null
+            }
+          },
+          "Metadata": {},
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.System.Activities.ViewModels.SWEntities.Agent_Output",
+        "hash": "YWc0UndHSFNJeGlLSnNPdEo1VEFQOEJCL0VHTDRSR0RieXd4azl0Rk9Xdz0",
+        "assemblyName": "Agent_Output.1cOcX1SN1HJ1L0IZV4eNtSD1"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "UfUj5Hg3MlOYdX+WGDJmKXjqNAMF5Ee0oHRexqt2HPA=",
+        "bundleName": "Agent_content_agent_json_Output",
+        "entitiesBundle": {
+          "Types": {
+            "Agent_content_agent_json_Output": {
+              "name": "Agent_content_agent_json_Output",
+              "properties": [
+                {
+                  "name": "category",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"category\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"category\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "confidence",
+                  "type": {
+                    "ClrType": "System.Double, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"confidence\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"confidence\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "is_auto_generated",
+                  "type": {
+                    "ClrType": "System.Boolean, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"is_auto_generated\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"is_auto_generated\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "rbae_number",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"rbae_number\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"rbae_number\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "reason",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"reason\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"reason\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "values": [],
+              "baseType": null
+            }
+          },
+          "Metadata": {},
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.System.Activities.ViewModels.SWEntities.Agent_content_agent_json_Output",
+        "hash": "VWZVajVIZzNNbE9ZZFgrV0dESm1LWGpxTkFNRjVFZTBvSFJleHF0MkhQQT0",
+        "assemblyName": "Agent_content_agent_.0mNZEYKwzN1Jmnva2szxKr2"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "nhBEz3pnA6sg4vNRzvIeMhSIIMCOXRcqqa8Whl8HY70=",
+        "bundleName": "Agent_content_agent_json_Input",
+        "entitiesBundle": {
+          "Types": {
+            "Agent_content_agent_json_Input": {
+              "name": "Agent_content_agent_json_Input",
+              "properties": [
+                {
+                  "name": "attachment_content",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"attachment_content\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"attachment_content\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "email_body",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_body\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_body\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "email_subject",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_subject\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_subject\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "email_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  },
+                  "attributes": {
+                    "values": [
+                      {
+                        "Type": {
+                          "ClrType": "Newtonsoft.Json.JsonPropertyAttribute, Newtonsoft.Json"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_type\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DisplayNameAttribute, System.ComponentModel.Primitives"
+                        },
+                        "constructorArguments": [
+                          {
+                            "Value": "\"email_type\"",
+                            "type": {
+                              "ClrType": "System.String, System.Private.CoreLib"
+                            }
+                          }
+                        ],
+                        "namedArguments": []
+                      },
+                      {
+                        "Type": {
+                          "ClrType": "System.ComponentModel.DataAnnotations.RequiredAttribute, System.ComponentModel.Annotations"
+                        },
+                        "constructorArguments": [],
+                        "namedArguments": []
+                      }
+                    ]
+                  }
+                }
+              ],
+              "values": [],
+              "baseType": null
+            }
+          },
+          "Metadata": {},
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.System.Activities.ViewModels.SWEntities.Agent_content_agent_json_Input",
+        "hash": "bmhCRXozcG5BNnNnNHZOUnp2SWVNaFNJSU1DT1hSY3FxYThXaGw4SFk3MD0",
+        "assemblyName": "Agent_content_agent_.bdvt53IkR8N1PfEuM21kBZT2"
+      }
+    }
+  ]
+}
