@@ -183,7 +183,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadInboxEmails" sap:VirtualizedContainerService.HintSize="896.6666666666666,1578.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads incoming emails from the Inbox and processes only valid mails for queueing.&#xA;Key functions included:&#xA;&#xA;Reads all Inbox emails based on defined filters and business rules.&#xA;Downloads attachments from each email.&#xA;Extracts structured and unstructured data from:&#xA;&#xA;Email attachments&#xA;Email body text&#xA;Email subject line&#xA;&#xA;&#xA;Classifies the email content to determine if the message is:&#xA;&#xA;A Scheduling Request&#xA;A Notice of Hearing (NOH) received&#xA;&#xA;&#xA;Only valid and correctly classified mails are added to the designated Queue for further downstream processing.&#xA;&#xA;This workflow ensures that all essential data is captured and delivered to the Queue, supporting accurate and efficient agent handling." DisplayName="ReadInboxEmails" sap:VirtualizedContainerService.HintSize="629.3333333333334,1660.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="umm:Office365Message[]" Name="EmailList" />
       <Variable x:TypeArguments="x:String" Name="AttachmentText" />
@@ -196,6 +196,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message -ReadInboxEmails" sap:VirtualizedContainerService.HintSize="629.3333333333334,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ReadInboxEmails started&quot;]">
@@ -230,7 +231,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <TryCatch DisplayName="Try Catch 'ReadInboxEmails'" sap:VirtualizedContainerService.HintSize="629.3333333333334,1154.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch 'ReadInboxEmails'" sap:VirtualizedContainerService.HintSize="629.3333333333334,1158" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="ui:OrchestratorJob" Name="JsonJobData" />
         <Variable x:TypeArguments="x:String" Name="EmailBodyPdfPath" />
@@ -243,7 +244,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" EmailAddress="{x:Null}" Folder="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="Please select an account." ApplicationId="[in_Config(&quot;SKED_AzureApplicationId&quot;).ToString]" AuthenticationType="ApplicationIdAndSecret" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Microsoft 365 Scope 'outlook'" Environment="Global" sap:VirtualizedContainerService.HintSize="590.6666666666666,860" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_3" OAuthApplication="UiPath" RuntimeItemInputMode="Browse" SecureApplicationSecret="[ClientSecret]" TenantId="[in_Config(&quot;SKED_AzureTenantID&quot;).ToString]" UseConnectionService="False">
+        <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" EmailAddress="{x:Null}" Folder="{x:Null}" ImpersonatedUserEmailAddress="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" Account="Please select an account." ApplicationId="[in_Config(&quot;SKED_AzureApplicationId&quot;).ToString]" AuthenticationType="ApplicationIdAndSecret" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Microsoft 365 Scope 'outlook'" Environment="Global" sap:VirtualizedContainerService.HintSize="590.6666666666666,863.3333333333334" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_3" OAuthApplication="UiPath" RuntimeItemInputMode="Browse" SecureApplicationSecret="[ClientSecret]" TenantId="[in_Config(&quot;SKED_AzureTenantID&quot;).ToString]" UseConnectionService="False">
           <uma:Office365ApplicationScope.AuthenticationScopes>
             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
           </uma:Office365ApplicationScope.AuthenticationScopes>
