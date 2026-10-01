@@ -1,15 +1,15 @@
 {
   "name": "SKED_Dispatcher",
   "projectId": "341b004f-ae1d-4d9d-9fde-4d4ea8d59ade",
-  "description": "Process will read Email Intake, Classification & Slot Offer\r\n",
+  "description": "Process Title\nSKED_Dispatcher\nProcess Description\nProcess will read Email Intake, perform Classification, and generate Slot Offer based on the extracted information.\nAdditional Information\nExternal Setup Required:\n\nAccess to Outlook 365 mailbox used for email intake\nUiPath agents configured and running\nAccess to UiPath Entities\nPermissions for Excel, PDF, Word processing\nRequired folder structure",
   "main": "Main.xaml",
   "dependencies": {
+    "HCAD_Utilities.General": "[1.0.1]",
     "HCAD.Azure.NeroClassificationAndExtraction": "[1.0.1]",
     "UiPath.Database.Activities": "[2.1.1]",
     "UiPath.DataService.Activities": "[25.9.10]",
     "UiPath.Excel.Activities": "[3.5.3]",
-    "UiPath.Mail.Activities": "[2.10.10]",
-    "UiPath.MicrosoftOffice365.Activities": "[3.10.10]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.11.11]",
     "UiPath.PDF.Activities": "[4.3.0]",
     "UiPath.System.Activities": "[26.6.2]",
     "UiPath.UIAutomation.Activities": "[26.10.1]",
@@ -69,7 +69,7 @@
     },
     {
       "filePath": "Outlook\\ReadNOHEmails.xaml",
-      "uniqueId": "a581d0ea-3873-4fb9-98e5-457c193d9e50",
+      "uniqueId": "a82ce5ae-1568-4c1f-8a87-d917cb8560c5",
       "input": [],
       "output": []
     }

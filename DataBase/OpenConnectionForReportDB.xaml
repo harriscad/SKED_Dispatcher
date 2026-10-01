@@ -49,6 +49,7 @@
       <x:String>UiPath.Database.Activities</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Net</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -116,9 +117,14 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open Connection for Reporting DB" DisplayName="Open Connection for Reporting DB" sap:VirtualizedContainerService.HintSize="602.6666666666666,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Open Connection for Reporting DB" DisplayName="Open Connection for Reporting DB" sap:VirtualizedContainerService.HintSize="870.6666666666666,1270" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +184,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:DatabaseConnect DisplayName="Connect to database-Open Connection" sap:VirtualizedContainerService.HintSize="382,82.66666666666667" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=D-SQLREPORTS-02;Initial Catalog=Process_Dashboard;User ID=VendorDBO;Password=!V3nd0rDb02024Hc@D!;Encrypt=False" DatabaseConnection="[out_dbConnection]" />
+                  <ui:DatabaseConnect DisplayName="Connect to database-Open Connection" sap:VirtualizedContainerService.HintSize="382,82.66666666666667" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="Microsoft.Data.SqlClient" ConnectionString="[ConnectionString]" DatabaseConnection="[out_dbConnection]" />
                 </Sequence>
               </ActivityAction>
             </ui:RetryScope.ActivityBody>

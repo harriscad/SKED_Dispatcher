@@ -795,97 +795,6 @@
         "DefaultValueSource": "Default"
       }
     ],
-    "UiPath.Mail.Activities.IMAP.NewIMAPEmailReceivedTrigger": [
-      {
-        "Type": "EventTrigger",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "2.2",
-            "ValueSource": "Constant"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "FilterExpression": {
-            "Value": "FilterExpression",
-            "ValueSource": "Property"
-          },
-          "ObjectName": {
-            "Value": "ObjectName",
-            "ValueSource": "Property"
-          },
-          "Operation": {
-            "Value": "Operation",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [
-          {
-            "Type": "Property",
-            "PublishNullValues": false,
-            "Key": {
-              "Value": "MailFolderBindingsKey",
-              "ValueSource": "Property"
-            },
-            "Values": {
-              "folder": {
-                "Value": "MailFolder",
-                "ValueSource": "Property"
-              }
-            },
-            "Arguments": {
-              "ActivityName": {
-                "Value": "DisplayName",
-                "ValueSource": "Property"
-              },
-              "BindingsVersion": {
-                "Value": "2.2",
-                "ValueSource": "Constant"
-              },
-              "ObjectName": {
-                "Value": "ObjectName",
-                "ValueSource": "Property"
-              },
-              "DisplayLabel": {
-                "Value": "folder",
-                "ValueSource": "Constant"
-              },
-              "PrimaryKey": {
-                "Value": "folder",
-                "ValueSource": "Constant"
-              },
-              "TriggerCreateParameters": {
-                "Value": "folder",
-                "ValueSource": "Constant"
-              },
-              "Overwritable": {
-                "Value": "false",
-                "ValueSource": "Constant"
-              }
-            },
-            "SubBindings": [],
-            "DefaultValueSource": "Property"
-          }
-        ],
-        "DefaultValueSource": "Property"
-      }
-    ],
     "UiPath.Mail.IMAP.Activities.DeleteImapMailMessage": [
       {
         "Type": "Connection",
@@ -902,7 +811,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.2",
+            "Value": "2.1",
             "ValueSource": "Constant"
           },
           "Connector": {
@@ -934,7 +843,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.2",
+            "Value": "2.1",
             "ValueSource": "Constant"
           },
           "Connector": {
@@ -966,7 +875,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.2",
+            "Value": "2.1",
             "ValueSource": "Constant"
           },
           "Connector": {
@@ -998,7 +907,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.2",
+            "Value": "2.1",
             "ValueSource": "Constant"
           },
           "Connector": {
@@ -1030,7 +939,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.2",
+            "Value": "2.1",
             "ValueSource": "Constant"
           },
           "Connector": {

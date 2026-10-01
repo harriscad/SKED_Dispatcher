@@ -130,7 +130,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FindAndGetArbitratorNameAndEmailId" sap:VirtualizedContainerService.HintSize="602.6666666666666,911.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FindAndGetArbitratorNameAndEmailId" sap:VirtualizedContainerService.HintSize="870.6666666666666,1229.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,7 +144,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <TryCatch DisplayName="Try Catch 'CreateLocalFolder'" sap:VirtualizedContainerService.HintSize="522.6666666666666,544.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch 'CreateLocalFolder'" sap:VirtualizedContainerService.HintSize="522.6666666666666,862.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,22 +152,22 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Sequence 'FindAndGetArbitratorNameAndEmailId'" sap:VirtualizedContainerService.HintSize="484,273.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Sequence 'FindAndGetArbitratorNameAndEmailId'" sap:VirtualizedContainerService.HintSize="484,591.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[in_EmailID.Contains(&quot;@hcad.org&quot;)]" DisplayName="If Check Arbitrator emailid" sap:VirtualizedContainerService.HintSize="450,213.33333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[in_EmailID.Contains(&quot;@hcad.org&quot;)]" DisplayName="If Check Arbitrator emailid" sap:VirtualizedContainerService.HintSize="450,531.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,343.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractedName = &quot;&quot;&#xD;&#xA;ExtractedEmail = &quot;&quot;&#xD;&#xA;&#xD;&#xA;' Regex looks ONLY at From: lines&#xD;&#xA;Dim pattern As String = &quot;From:\s*['&quot;&quot;]?(?&lt;name&gt;[A-Za-z0-9 .]+)['&quot;&quot;]?.*?&lt;(?&lt;email&gt;[^&gt;]+)&gt;&quot;&#xD;&#xA;&#xD;&#xA;Dim match As System.Text.RegularExpressions.Match =&#xD;&#xA;    System.Text.RegularExpressions.Regex.Match(EmailBody, pattern)&#xD;&#xA;&#xD;&#xA;If match.Success Then&#xD;&#xA;    Dim name As String = match.Groups(&quot;name&quot;).Value.Trim()&#xD;&#xA;    Dim email As String = match.Groups(&quot;email&quot;).Value.Trim()&#xD;&#xA;&#xD;&#xA;    ' Clean mailto: if present&#xD;&#xA;    If email.Contains(&quot;mailto:&quot;) Then&#xD;&#xA;        email = email.Replace(&quot;mailto:&quot;, &quot;&quot;)&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    ' Skip HCAD emails&#xD;&#xA;    If Not email.ToLower.Contains(&quot;@hcad.org&quot;) Then&#xD;&#xA;        ExtractedName = name&#xD;&#xA;        ExtractedEmail = email&#xD;&#xA;    End If&#xD;&#xA;End If" DisplayName="Invoke Code 'Extract ArbitratorName and mail ID'" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractedName = &quot;&quot;&#xA;ExtractedEmail = &quot;&quot;&#xA;&#xA;' Regex looks ONLY at From: lines&#xA;Dim pattern As String = &quot;From:\s*['&quot;&quot;]?(?&lt;name&gt;[A-Za-z0-9 .]+)['&quot;&quot;]?.*?&lt;(?&lt;email&gt;[^&gt;]+)&gt;&quot;&#xA;&#xA;Dim match As System.Text.RegularExpressions.Match =&#xA;    System.Text.RegularExpressions.Regex.Match(EmailBody, pattern)&#xA;&#xA;If match.Success Then&#xA;    Dim name As String = match.Groups(&quot;name&quot;).Value.Trim()&#xA;    Dim email As String = match.Groups(&quot;email&quot;).Value.Trim()&#xA;&#xA;    ' Clean mailto: if present&#xA;    If email.Contains(&quot;mailto:&quot;) Then&#xA;        email = email.Replace(&quot;mailto:&quot;, &quot;&quot;)&#xA;    End If&#xA;&#xA;    ' Skip HCAD emails&#xA;    If Not email.ToLower.Contains(&quot;@hcad.org&quot;) Then&#xA;        ExtractedName = name&#xA;        ExtractedEmail = email&#xA;    End If&#xA;End If" DisplayName="Invoke Code 'Extract ArbitratorName and mail ID'" sap:VirtualizedContainerService.HintSize="382,283.3333333333333" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                   <ui:InvokeCode.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="EmailBody">[in_EmailBody]</InArgument>
                     <OutArgument x:TypeArguments="x:String" x:Key="ExtractedName">[out_ArbitratorName]</OutArgument>
@@ -175,7 +175,7 @@
                   </ui:InvokeCode.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
