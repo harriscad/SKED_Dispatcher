@@ -436,8 +436,8 @@
                 <ui:AddQueueItem TimeoutMS="{x:Null}" DisplayName="Add NOHQueue Item" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="518,167.33333333333334" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_Config(&quot;Orchestrator_NOHExtractorQueueName&quot;).ToString]" Reference="[JObject(&quot;content&quot;)(&quot;rba_case_number&quot;)(&quot;value&quot;).ToString]">
                   <ui:AddQueueItem.ItemInformation>
                     <InArgument x:TypeArguments="x:String" x:Key="RBAENumber">[JObject("content")("rba_case_number")("value").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorName">[JObject("content")("arbitrator_contact")("arbitrator_name")("value").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Arbitrator Email">[JObject("content")("arbitrator_contact")("arbitrator_email")("value").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorName">[in_TransactionItem.SpecificContent("ArbitratorName").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Arbitrator Email">[in_TransactionItem.SpecificContent("ArbitratorEmailID").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="ArbitratorPhone">[JObject("content")("arbitrator_contact")("arbitrator_phone")("parsed").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="PhysicalAddress">[JObject("content")("physical_address")("value").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="SchedulingRequestMail">[EmailFileName]</InArgument>
