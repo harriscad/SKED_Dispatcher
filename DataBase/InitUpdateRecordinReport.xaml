@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UpdateReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdateReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SqlUpdateQuery" Type="InArgument(x:String)" />
     <x:Property Name="in_dbConnection" Type="InArgument(ui:DatabaseConnection)" />
@@ -133,6 +133,8 @@
       <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="This workflow updates report data directly into the SQL database using predefined activities and queries. It receives validated inputs, executes the required SQL commands, and ensures accurate updates to the target tables." DisplayName="UpdateReport" sap:VirtualizedContainerService.HintSize="870.6666666666666,1532" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -160,7 +162,7 @@
       <TryCatch.Try>
         <Sequence DisplayName="Update Record" sap:VirtualizedContainerService.HintSize="484,944.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:Int32" Name="intDBCount" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_DBTable" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -176,18 +178,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:ExecuteNonQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" AffectedRecords="[intDBCount]" DisplayName="Select Report formDB" ExistingDbConnection="[in_dbConnection]" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_3" Sql="[in_SelectQueryUsingTransactionID]">
-            <ui:ExecuteNonQuery.Parameters>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[dt_DBTable]" DisplayName="Run Select Query" ExistingDbConnection="[in_dbConnection]" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[in_SelectQueryUsingTransactionID]">
+            <ui:ExecuteQuery.Parameters>
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:ExecuteNonQuery.Parameters>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:ExecuteNonQuery>
-          <If Condition="[intDBCount&gt;0]" DisplayName="If Record found in DB" sap:VirtualizedContainerService.HintSize="450,560" sap2010:WorkflowViewState.IdRef="If_1">
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+          <If Condition="[dt_DBTable.RowCount&gt;0]" DisplayName="If Record found in DB" sap:VirtualizedContainerService.HintSize="450,560" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,48 +199,20 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Update Report - with human validation" ExistingDbConnection="[in_dbConnection]" sap:VirtualizedContainerService.HintSize="382,138.66666666666666" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_4" Sql="[in_SqlUpdateQuery]">
                   <ui:ExecuteNonQuery.Parameters>
-                    <InArgument x:TypeArguments="x:String" x:Key="TransactionID">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="RBACaseNumber">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RBACaseNumber" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailMessageID">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MessageID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailReceivedDateTime">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailReceivedDate" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSender" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="SenderName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSenderName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSubject" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailCategory">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Category" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorEmail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ArbitratorEmailID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="IsBusinessException">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_IsBusinessException" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionType">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExceptionType" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionDetail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExceptionDetail" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="IsApplicationException">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_IsApplicationException" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="CurrentStatus">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CurrentStatus" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="TransactionID">[in_TransactionID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="RBACaseNumber">[in_RBACaseNumber]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailMessageID">[in_MessageID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailReceivedDateTime">[in_EmailReceivedDate]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[in_EmailSender]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="SenderName">[in_EmailSenderName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[in_EmailSubject]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailCategory">[in_Category]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorEmail">[in_ArbitratorEmailID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="IsBusinessException">[in_IsBusinessException]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionType">[in_ExceptionType]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionDetail">[in_ExceptionDetail]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="IsApplicationException">[in_IsApplicationException]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="CurrentStatus">[in_CurrentStatus]</InArgument>
                   </ui:ExecuteNonQuery.Parameters>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -264,48 +232,20 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Insert Report - with human validation" ExistingDbConnection="[in_dbConnection]" sap:VirtualizedContainerService.HintSize="382,138.66666666666666" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[in_SqlInsertQuery]">
                   <ui:ExecuteNonQuery.Parameters>
-                    <InArgument x:TypeArguments="x:String" x:Key="TransactionID">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="RBACaseNumber">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RBACaseNumber" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailMessageID">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MessageID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailReceivedDateTime">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailReceivedDate" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSender" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="SenderName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSenderName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailSubject" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="EmailCategory">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Category" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorEmail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ArbitratorEmailID" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="IsBusinessException">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_IsBusinessException" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionType">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExceptionType" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionDetail">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExceptionDetail" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="IsApplicationException">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_IsApplicationException" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="CurrentStatus">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CurrentStatus" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="TransactionID">[in_TransactionID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="RBACaseNumber">[in_RBACaseNumber]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailMessageID">[in_MessageID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailReceivedDateTime">[in_EmailReceivedDate]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="SenderEmail">[in_EmailSender]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="SenderName">[in_EmailSenderName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailSubject">[in_EmailSubject]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="EmailCategory">[in_Category]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ArbitratorEmail">[in_ArbitratorEmailID]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="IsBusinessException">[in_IsBusinessException]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionType">[in_ExceptionType]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="ExceptionDetail">[in_ExceptionDetail]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="IsApplicationException">[in_IsApplicationException]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="CurrentStatus">[in_CurrentStatus]</InArgument>
                   </ui:ExecuteNonQuery.Parameters>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

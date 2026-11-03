@@ -130,13 +130,13 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FindAndGetArbitratorNameAndEmailId" sap:VirtualizedContainerService.HintSize="870.6666666666666,1229.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FindAndGetArbitratorNameAndEmailId" sap:VirtualizedContainerService.HintSize="870.6666666666666,1489.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message -Start" sap:VirtualizedContainerService.HintSize="522.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FindAndGetArbitratorNameAndEmailId xaml started&quot;]">
+    <ui:LogMessage DisplayName="Log Message -Start" sap:VirtualizedContainerService.HintSize="574.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FindAndGetArbitratorNameAndEmailId xaml started&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,7 +144,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <TryCatch DisplayName="Try Catch 'CreateLocalFolder'" sap:VirtualizedContainerService.HintSize="522.6666666666666,862.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch 'CreateLocalFolder'" sap:VirtualizedContainerService.HintSize="574.6666666666666,1122.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,13 +152,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Sequence 'FindAndGetArbitratorNameAndEmailId'" sap:VirtualizedContainerService.HintSize="484,591.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Sequence 'FindAndGetArbitratorNameAndEmailId'" sap:VirtualizedContainerService.HintSize="536,851.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[in_EmailID.Contains(&quot;@hcad.org&quot;)]" DisplayName="If Check Arbitrator emailid" sap:VirtualizedContainerService.HintSize="450,531.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[in_EmailID.Contains(&quot;@hcad.org&quot;)]" DisplayName="If Check Arbitrator emailid" sap:VirtualizedContainerService.HintSize="502,791.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,343.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
@@ -167,7 +167,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractedName = &quot;&quot;&#xA;ExtractedEmail = &quot;&quot;&#xA;&#xA;' Regex looks ONLY at From: lines&#xA;Dim pattern As String = &quot;From:\s*['&quot;&quot;]?(?&lt;name&gt;[A-Za-z0-9 .]+)['&quot;&quot;]?.*?&lt;(?&lt;email&gt;[^&gt;]+)&gt;&quot;&#xA;&#xA;Dim match As System.Text.RegularExpressions.Match =&#xA;    System.Text.RegularExpressions.Regex.Match(EmailBody, pattern)&#xA;&#xA;If match.Success Then&#xA;    Dim name As String = match.Groups(&quot;name&quot;).Value.Trim()&#xA;    Dim email As String = match.Groups(&quot;email&quot;).Value.Trim()&#xA;&#xA;    ' Clean mailto: if present&#xA;    If email.Contains(&quot;mailto:&quot;) Then&#xA;        email = email.Replace(&quot;mailto:&quot;, &quot;&quot;)&#xA;    End If&#xA;&#xA;    ' Skip HCAD emails&#xA;    If Not email.ToLower.Contains(&quot;@hcad.org&quot;) Then&#xA;        ExtractedName = name&#xA;        ExtractedEmail = email&#xA;    End If&#xA;End If" DisplayName="Invoke Code 'Extract ArbitratorName and mail ID'" sap:VirtualizedContainerService.HintSize="382,283.3333333333333" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="ExtractedName = &quot;&quot;&#xD;&#xA;ExtractedEmail = &quot;&quot;&#xD;&#xA;&#xD;&#xA;' Regex looks ONLY at From: lines&#xD;&#xA;Dim pattern As String = &quot;From:\s*(?&lt;name&gt;.*?)\s+(?&lt;email&gt;[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})&quot;&#xD;&#xA;&#xD;&#xA;Dim match As System.Text.RegularExpressions.Match =&#xD;&#xA;    System.Text.RegularExpressions.Regex.Match(EmailBody, pattern)&#xD;&#xA;&#xD;&#xA;If match.Success Then&#xD;&#xA;    Dim name As String = match.Groups(&quot;name&quot;).Value.Trim()&#xD;&#xA;    Dim email As String = match.Groups(&quot;email&quot;).Value.Trim()&#xD;&#xA;&#xD;&#xA;    ' Clean mailto: if present&#xD;&#xA;    If email.Contains(&quot;mailto:&quot;) Then&#xD;&#xA;        email = email.Replace(&quot;mailto:&quot;, &quot;&quot;)&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    ' Skip HCAD emails&#xD;&#xA;    If Not email.ToLower.Contains(&quot;@hcad.org&quot;) Then&#xD;&#xA;        ExtractedName = name&#xD;&#xA;        ExtractedEmail = email&#xD;&#xA;    End If&#xD;&#xA;End If" DisplayName="Invoke Code 'Extract ArbitratorName and mail ID'" sap:VirtualizedContainerService.HintSize="382,283.3333333333333" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
                   <ui:InvokeCode.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="EmailBody">[in_EmailBody]</InArgument>
                     <OutArgument x:TypeArguments="x:String" x:Key="ExtractedName">[out_ArbitratorName]</OutArgument>
@@ -183,10 +183,10 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,285.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -224,7 +224,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488.6666666666667,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="540.6666666666666,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -240,7 +240,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message- Ended" sap:VirtualizedContainerService.HintSize="522.6666666666666,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FindAndGetArbitratorNameAndEmailId xaml Ended&quot;]">
+    <ui:LogMessage DisplayName="Log Message- Ended" sap:VirtualizedContainerService.HintSize="574.6666666666666,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;FindAndGetArbitratorNameAndEmailId xaml Ended&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
